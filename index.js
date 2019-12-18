@@ -14,7 +14,7 @@ useCreateIndex: true, useUnifiedTopology: true  }, ()=>{
 })
 
 mongoose.set('useFindAndModify', false) //used because of deprecation issue
- 
+
 //routes
 app.use('/api', require('./routes/post'))
 
@@ -26,4 +26,5 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 const PORT = process.env.PORT || 5000
+
 app.listen(PORT, ()=>console.log(`The server is running on port ${PORT}`))
