@@ -7,7 +7,7 @@ route.post('/post', (req, res)=>{
   const {title, content} = req.body
   Post.create({title, content})
   .then(post=>{
-    res.json({message:'Post added successfully'})
+    res.json({message:'Post was added successfully'})
   })
   .catch(err=>{
     res.json({message: 'Post was not added'})
@@ -38,7 +38,7 @@ route.post('/deletePost', (req, res)=>{
 
 //update a post
 route.put('/post', (req, res)=>{
-  Post.findOneAndUpdate({_id:req.body.id }, {$set:{
+  Post.findOneAndUpdate({_id:req.body.id}, {$set:{
     title: req.body.title,
     content: req.body.content
   }}, {upsert:false})
