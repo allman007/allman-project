@@ -38,7 +38,7 @@ route.post('/deletePost', (req, res)=>{
 
 //update a post
 route.put('/post', (req, res)=>{
-  Post.findOneAndUpdate({_id:req.body.id}, {$set:{
+  Post.findOneAndUpdate({_id:req.body.id }, {$set:{
     title: req.body.title,
     content: req.body.content
   }}, {upsert:false})
@@ -48,4 +48,5 @@ route.put('/post', (req, res)=>{
     res.json(err)
   })
 })
+
 module.exports = route
