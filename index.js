@@ -14,7 +14,7 @@ useCreateIndex: true, useUnifiedTopology: true  }, ()=>{
 })
 
 mongoose.set('useFindAndModify', false) //used because of deprecation issue
-
+ 
 //routes
 app.use('/api', require('./routes/post'))
 
